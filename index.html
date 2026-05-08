@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ADHD Presentation | Reveal.js</title>
+    <!-- Reveal.js Core CSS (Dark theme for better contrast with gradients) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+    <!-- For syntax highlighting if needed, but not essential -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <style>
+        /* Global reset to ensure full-screen coverage without overflow */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000; /* fallback */
+        }
+
+        /* Reveal container takes full viewport, no extra margins */
+        .reveal {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 20% 30%, #1a1a2e, #16213e);
+        }
+
+        /* Ensure slides fill the entire visible area and center content properly */
+        .reveal .slides {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        /* Each section becomes full-screen flex container */
+        .reveal .slides section {
+            height: 100vh;
+            width: 100vw;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-size: cover !important;
+            background-position: center !important;
+            /* smooth transitions */
+            transition: all 0.3s ease;
+        }
+
+        /* Improve typography for better readability on gradients */
+        .reveal .slides section h1, 
+        .reveal .slides section h2, 
+        .reveal .slides section h3 {
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            letter-spacing: -0.02em;
+        }
+
+        .reveal .slides section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .reveal .slides section ul, 
+        .reveal .slides section p {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            max-width: 80%;
+            text-align: left;
+            margin: 0.8rem auto;
+        }
+
+        .reveal .slides section li {
+            margin: 0.6rem 0;
+        }
+
+        /* Adjust for smaller screens, keep text readable */
+        @media (max-width: 768px) {
+            .reveal .slides section h2 {
+                font-size: 2.2rem;
+            }
+            .reveal .slides section ul, 
+            .reveal .slides section p {
+                font-size: 1.2rem;
+                max-width: 90%;
+            }
+        }
+
+        /* Custom style for speaker notes in presenter mode: ensure they are visible and legible */
+        .reveal .speaker-notes {
+            font-size: 1.2rem;
+            background: #2d2d2d;
+            color: #f0f0f0;
+            border-left: 5px solid #ff9a9e;
+            padding: 1rem;
+            font-family: 'Segoe UI', 'Roboto', monospace;
+        }
+        
+        /* override default slide background for dark theme to allow gradient visibility */
+        .reveal .slides section[data-background-gradient] {
+            background: var(--bg-grad);
+        }
+        
+        /* Add extra styling for best fullscreen scaling: remove any default padding/margin from reveal */
+        .reveal .slides > section {
+            scroll-snap-align: start;
+        }
+        
+        /* make sure fragments look nice */
+        .reveal .slides section .fragment {
+            transition: all 0.2s ease;
+        }
+        
+        /* small custom note indicator for presenter mode clarity */
+        .reveal aside.notes {
+            display: none; /* hidden in normal view, but Reveal.js extracts them */
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1 - Clean minimal design with slight gradient background -->
+            <section data-background-gradient="linear-gradient(145deg, #0f2027, #203a43, #2c5364)" data-transition="slide">
+                <h2 style="color: #fff; text-shadow: 0 4px 12px rgba(0,0,0,0.3);">✨ ADHD Demystified ✨</h2>
+                <p style="color: #eef2f3; font-size: 1.7rem; font-weight: 500;">A neurodevelopmental journey through focus, energy & creativity</p>
+                <aside class="notes">
+                    Welcome to the presentation! This slide sets the stage for understanding ADHD.
+                    Speaker notes: Start by acknowledging that ADHD affects millions worldwide, often underdiagnosed in adults.
+                    Emphasize that today we'll explore experiences, strengths, and practical support.
+                    Encourage audience interaction by asking: "What comes to mind when you hear ADHD?"
+                </aside>
+            </section>
+
+            <!-- Slide 2: ADHD at a glance - redesigned solid gradient with engaging layout -->
+            <section data-background-gradient="linear-gradient(125deg, #ff6a88, #ff99ac, #ffb7b2)" data-transition="convex">
+                <h2 style="color: #1e1e2f;">🧠 ADHD at a glance</h2>
+                <ul style="color: #1a1a2e; background: rgba(255,255,240,0.7); border-radius: 2rem; padding: 1.5rem 2.5rem; backdrop-filter: blur(2px);">
+                    <li>⚡ Attention-Deficit / Hyperactivity Disorder</li>
+                    <li>🌀 A neurodevelopmental condition affecting attention regulation, impulsivity, and activity level</li>
+                    <li>🎭 Highly individual — presents differently across people & ages</li>
+                    <li>💡 Often accompanied by unique strengths like rapid idea generation & resilience</li>
+                </ul>
+                <aside class="notes">
+                    Core facts: ADHD is recognized as a legitimate medical condition by WHO and major health organizations.
+                    Three subtypes: inattentive, hyperactive-impulsive, and combined presentation.
+                    Important: Executive function challenges are at the heart — not just "lack of willpower".
+                    Mention famous successful individuals with ADHD to reduce stigma.
+                    These notes help you expand during the presentation.
+                </aside>
+            </section>
+
+            <!-- Slide 3: Common ADHD experiences - using dynamic grid feel -->
+            <section data-background-gradient="linear-gradient(115deg, #2b86c5, #43c6ac, #5f9ea0)" data-transition="zoom">
+                <h2 style="color: #0a1922;">🔄 Common ADHD experiences</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 1rem 1.8rem; border-radius: 60px; color: white; font-weight: bold;">🔍 Difficulty sustaining attention on routine tasks</div>
+                    <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 1rem 1.8rem; border-radius: 60px; color: white; font-weight: bold;">🦵 Feeling restless or needing to move often</div>
+                    <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 1rem 1.8rem; border-radius: 60px; color: white; font-weight: bold;">🚀 Hyperfocus on highly engaging activities</div>
+                    <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 1rem 1.8rem; border-radius: 60px; color: white; font-weight: bold;">📅 Challenges with organization & time management</div>
+                    <div style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 1rem 1.8rem; border-radius: 60px; color: white; font-weight: bold;">🎯 Emotional sensitivity & rejection sensitivity</div>
+                </div>
+                <p style="color: #f4f9ff; margin-top: 2rem; font-size: 1.4rem;">💬 These experiences are part of the ADHD profile — not character flaws.</p>
+                <aside class="notes">
+                    Explain each point: The difficulty with mundane tasks vs. ability to hyperfocus on interesting projects.
+                    Restlessness can be internal mental restlessness, not just physical. 
+                    Hyperfocus is a double-edged sword — can lead to incredible productivity but also losing track of time.
+                    Organization struggles often require external systems. 
+                    Note: RSD (Rejection Sensitive Dysphoria) is common but not in official criteria — yet widely recognized.
+                    Use real-world examples: losing keys, time blindness, intense creativity bursts. 
+                    Encourage audience to reflect on personal or observed examples.
+                </aside>
+            </section>
+
+            <!-- Slide 4: Strengths and support - brighter palette -->
+            <section data-background-gradient="linear-gradient(135deg, #f7971e, #ffd200, #f9d423)" data-transition="fade">
+                <h2 style="color: #1f2a1e;">🌟 Strengths & support strategies</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 85%; margin: 0 auto; text-align: left;">
+                    <div style="background: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 28px; backdrop-filter: brightness(1.05);">
+                        <h3 style="color: #2e3820;">💪 Strengths</h3>
+                        <ul style="font-size: 1.2rem; color: #111;">
+                            <li>🎨 High creativity & big-picture thinking</li>
+                            <li>🧩 Curiosity, out-of-the-box problem solving</li>
+                            <li>⚡ Boundless energy & enthusiasm when engaged</li>
+                            <li>❤️ Empathy & spontaneity</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 28px; backdrop-filter: brightness(1.05);">
+                        <h3 style="color: #2e3820;">🛠️ Effective support</h3>
+                        <ul style="font-size: 1.2rem; color: #111;">
+                            <li>📝 Small routines & visual reminders</li>
+                            <li>⏲️ Clear priorities & time-blocking</li>
+                            <li>🤝 Peer support groups & coaching</li>
+                            <li>💻 Environmental modifications (minimize distractions)</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 1.8rem; font-weight: 600; background: rgba(0,0,0,0.3); display: inline-block; padding: 0.4rem 1.5rem; border-radius: 40px; color: white;">💙 Support makes a world of difference — celebrate neurodiversity!</p>
+                <aside class="notes">
+                    Final strengths-based reflection: Emphasize that ADHD is not a deficit of attention but a challenge in regulating it.
+                    Mention that entrepreneurs, artists, and innovators often thrive with ADHD traits.
+                    Practical tips: Body doubling, using visual timers, breaking tasks into micro-steps.
+                    For educators or managers: Provide written instructions, frequent check-ins, and flexible deadlines.
+                    Share that seeking professional help (therapy, medication, coaching) can be transformative.
+                    Conclude with an uplifting message: understanding ADHD creates inclusive environments for everyone.
+                    Ask the audience: "What's one small change that could help you or someone you know?"
+                </aside>
+            </section>
+
+            <!-- Bonus Slide: Interactive question / call to action - fullscreen design -->
+            <section data-background-gradient="linear-gradient(145deg, #232526, #414345)" data-transition="slide">
+                <h2 style="color: #ffd966;">🤔 Let's reflect</h2>
+                <p style="color: #ddd; font-size: 1.8rem;">How can we build environments that support diverse minds?</p>
+                <div style="margin-top: 2rem; font-size: 1.4rem; background: #ffffff22; border-radius: 32px; padding: 1.2rem; max-width: 70%;">
+                    <p>✔️ Focus on strengths, not just deficits<br>
+                    ✔️ Provide clear structures with flexibility<br>
+                    ✔️ Reduce unnecessary distractions<br>
+                    ✔️ Practice empathy & active listening</p>
+                </div>
+                <aside class="notes">
+                    Discussion prompt: This is a great moment to pause and invite audience sharing.
+                    If time limited, you can summarize: Implementing inclusive design benefits everyone, not just neurodivergent individuals.
+                    Mention reasonable accommodations in schools and workplaces are often simple and cost-effective.
+                    Conclude with gratitude and a reminder to seek further resources (CHADD, ADDA).
+                    Final note: Thank you for engaging in destigmatizing ADHD!
+                </aside>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js and required plugins -->
+    <script type="module">
+        import Reveal from 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.esm.js';
+        import Markdown from 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.esm.js';
+        import Notes from 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.esm.js';
+        import Highlight from 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.esm.js';
+        
+        // Initialize Reveal with full-screen configuration and presenter notes enabled
+        Reveal.initialize({
+            // --- FULL SCREEN FIX ---
+            // Disable margins that could prevent full-screen appearance
+            margin: 0,
+            // Ensure the presentation stretches to fill the container
+            width: '100%',
+            height: '100%',
+            // Center slide contents horizontally & vertically (default true, but explicit)
+            center: true,
+            // Control navigation and transition
+            transition: 'slide',            // smooth slide transitions
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            
+            // --- SLIDE NUMBER OPTIONAL but fine ---
+            slideNumber: true,
+            hash: true,                    // Enable URL hash for navigation
+            
+            // --- PLUGINS: markdown enabled (though we primarily use HTML, but for future markdown compatibility)
+            // Also notes plugin ensures speaker notes appear in presenter mode
+            plugins: [Markdown, Notes, Highlight],
+            
+            // --- PRESENTER MODE TWEAKS ---
+            // Enable the presenter mode notes functionality.
+            showNotes: false,               // Do not show notes inline on main screen but separate window will show
+            // Preload slides for smooth presenter experience
+            preloadIframes: true,
+            
+            // View distance for fragments and overall performance
+            viewDistance: 3,
+            
+            // Keyboard bindings for presenter convenience
+            keyboard: {
+                13: 'next',      // Enter key goes to next slide
+                32: 'next',      // Spacebar
+                39: 'next',
+                37: 'prev'
+            },
+            
+            // Ensure embedded content resizes properly
+            disableLayout: false,
+            
+            // Touch navigation support for touch screens
+            touch: true,
+            
+            // Dependencies are already covered via ES modules
+        });
+        
+        // Additional custom adjustment after load to ensure full-screen even on browser resize
+        window.addEventListener('resize', () => {
+            // Re-layout Reveal.js slides on window resize to maintain full-screen scaling
+            if (Reveal) {
+                Reveal.layout();
+            }
+        });
+        
+        // Show a console message to confirm presenter notes mode can be activated via 's' key
+        console.log('Reveal.js ready — Press "S" key to open speaker view (presenter mode) with notes.');
+    </script>
+    
+    <!-- Optional additional script to inform about presenter mode usage -->
+    <noscript>Your browser does not support JavaScript, but Reveal.js works best with JavaScript enabled.</noscript>
+</body>
+</html>
